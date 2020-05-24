@@ -1,3 +1,7 @@
+package servlet;
+
+import domain.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +24,5 @@ public class MainServlet extends HttpServlet {
           User currentUser =  (User) session.getAttribute("currentUser");
           resp.getWriter().println("Hello user " + currentUser.getName());
         }
-
     }
 }

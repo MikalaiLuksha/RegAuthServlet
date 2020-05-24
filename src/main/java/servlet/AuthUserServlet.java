@@ -1,3 +1,8 @@
+package servlet;
+
+import domain.User;
+import storage.UserStorage;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +24,5 @@ UserStorage userStorage = new UserStorage();
         if (user.getPassword().equals(password)){
             req.getSession().setAttribute("currentUser", user);
         }
-
     }
 }
