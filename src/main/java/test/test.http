@@ -10,10 +10,14 @@ POST http://localhost:8080/auth?login=Sup&password=qwert
 
 ###
 
-GET http://localhost:8080/calc?num1=1&num2=2&operation=plus
+GET http://localhost:8080/calc?num1=1&num2=4&operation=plus
 
 ###
 
 GET http://localhost:8080/result?operation=plus
+
+###
+
+GET http://localhost:8080/logout
 
 ###

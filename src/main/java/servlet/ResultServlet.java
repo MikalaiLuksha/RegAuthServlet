@@ -19,15 +19,12 @@ public class ResultServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("currentUser") == null){
-            resp.getWriter().println("Error");
-        }
-        else {
+
+
             String operation = req.getParameter("operation");
             List<Operation> result = (List<Operation>) req.getSession().getAttribute("resultCalc");
-            resp.getWriter().println(result);
             List <Operation> resultSth = serviceCalc.calcResult(operation, result);
             resp.getWriter().println(resultSth);
-        }
+
     }
 }

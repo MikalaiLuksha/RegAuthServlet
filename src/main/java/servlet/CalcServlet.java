@@ -22,9 +22,7 @@ public class CalcServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if (req.getSession().getAttribute("currentUser") == null) {
-            resp.getWriter().println("Error");
-        } else {
+
             if (req.getSession().getAttribute("resultCalc") == null) {
                 req.getSession().setAttribute("resultCalc", new ArrayList<>());
             }
@@ -33,9 +31,10 @@ public class CalcServlet extends HttpServlet {
                 String operation = req.getParameter("operation");
                 double num3 = serviceCalc.calculation(operation, num1, num2);
                 Operation operation1 = new Operation(operation, num1, num2, num3);
+                resp.getWriter().println(operation1);
                 List<Operation> result = (List<Operation>) req.getSession().getAttribute("resultCalc");
                 result.add(operation1);
 
-        }
+
     }
 }
